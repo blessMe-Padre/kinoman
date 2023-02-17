@@ -1,8 +1,14 @@
+import FilmsPresenter from './presenter/films-presenter.js';
 import { render } from './render.js';
-import ButtonShowMoreView from './view/show-more-button-view.js';
+import HeaderProfileView from './view/header-profile-view.js';
 import SortView from './view/sort-view.js';
 
+const header = document.querySelector('.header');
 const siteMain = document.querySelector('.main');
+const filmsPresenter = new FilmsPresenter();
 
+render(new HeaderProfileView(), header);
 render(new SortView(), siteMain);
-render(new ButtonShowMoreView(), siteMain);
+
+
+filmsPresenter.init(siteMain);
