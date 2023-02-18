@@ -1,10 +1,23 @@
 /* eslint-disable quotes */
 
-const emotions = ["smile", "sleeping", "puke", "angry"];
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 
+const emotions = ["smile", "sleeping", "puke", "angry"];
 const localComment = {
   "comment": "a film that changed my life, a true masterpiece, post-credit scene was just amazing omg.",
   "emotion": emotions,
+};
+
+const generatePoster = () => {
+  const posters = [
+    'made-for-each-other.png',
+    'popeye-meets-sinbad.png',
+    'sagebrush-trail.jpg'
+  ];
+  const randomIndex = getRandomInt(posters.length);
+  return posters[randomIndex];
 };
 
 export const generateFilm = () => ({
@@ -12,11 +25,11 @@ export const generateFilm = () => ({
   'comments': [
     localComment,
   ],
-  'film_info': {
+  'filmInfo': {
     'title': 'A Little Pony Without The Carpet',
     'alternative_title': 'Laziness Who Sold Themselves',
-    'total_rating': 5.3,
-    'poster': 'images/posters/blue-blazes.jpg',
+    'totalRating': 5.3,
+    'poster': generatePoster(),
     'age_rating': 0,
     'director': 'Tom Ford',
     'writers': [

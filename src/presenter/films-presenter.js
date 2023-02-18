@@ -18,7 +18,6 @@ export default class FilmsPresenter {
     this.filmsModel = filmsModel;
     this.filmListFromModel = [...this.filmsModel.getFilms()];
 
-
     render(new FilterView(), this.container);
     render(new SortView(), this.container);
     render(this.filmsComponent, this.container);
